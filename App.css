@@ -1,0 +1,49 @@
+/* Component-level overrides if needed */
+.section-pad { padding-top: 6rem; padding-bottom: 6rem; }
+@media (max-width: 768px) {
+  .section-pad { padding-top: 4rem; padding-bottom: 4rem; }
+}
+
+.section-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8E5A7B;
+}
+
+.btn-primary {
+  background: #5C3A4F;
+  color: #F5EDE0;
+  transition: background 220ms ease, transform 220ms ease, box-shadow 220ms ease;
+}
+.btn-primary:hover {
+  background: #4A2D40;
+  box-shadow: 0 10px 24px -12px rgba(92,58,79,0.55);
+}
+.btn-primary:active { transform: translateY(1px); }
+
+.btn-ghost {
+  background: transparent;
+  color: #2B1A24;
+  border: 1px solid #5C3A4F;
+  transition: background 220ms ease, color 220ms ease;
+}
+.btn-ghost:hover { background: #5C3A4F; color: #F5EDE0; }
+
+.chip {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #000000;
+  font-size: 0.78rem;
+  border: 1px solid #000000;
+}

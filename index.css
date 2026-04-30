@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #ffffff;
+  color: #2B1A24;
+}
+
+code, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.font-display {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  letter-spacing: -0.01em;
+}
+
+@layer base {
+  :root {
+    /* Dark Mauve + Beige palette */
+    --background: 0 0% 100%;           /* #ffffff white */
+    --foreground: 330 22% 14%;         /* #2B1A24 deep mauve-black */
+    --card: 36 50% 96%;                /* #FBF6EC cream */
+    --card-foreground: 330 22% 14%;
+    --popover: 36 50% 96%;
+    --popover-foreground: 330 22% 14%;
+    --primary: 325 22% 28%;            /* #5C3A4F mauve */
+    --primary-foreground: 36 50% 96%;
+    --secondary: 35 35% 86%;           /* #E8DCC4 muted beige */
+    --secondary-foreground: 325 22% 28%;
+    --muted: 35 30% 88%;
+    --muted-foreground: 325 15% 38%;   /* #6B5560 */
+    --accent: 325 28% 45%;             /* #8E5A7B accent mauve */
+    --accent-foreground: 36 50% 96%;
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 36 50% 96%;
+    --border: 35 30% 80%;
+    --input: 35 30% 82%;
+    --ring: 325 22% 28%;
+    --radius: 0.6rem;
+  }
+}
+
+@layer base {
+  * { border-color: var(--border); }
+  body { background-color: var(--background); color: var(--foreground); }
+  ::selection { background-color: #5C3A4F; color: #ffffff; }
+}
+
+/* Add custom border utility */
+@layer utilities {
+  .border-border {
+    border-color: var(--border);
+  }
+}
+
+/* Subtle paper-grain texture overlay for warmth */
+.bg-paper {
+  background-color: #ffffff;
+  background-image:
+    radial-gradient(rgba(92,58,79,0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Animated underline for nav */
+.nav-link {
+  position: relative;
+  transition: color 200ms ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -4px;
+  width: 0; height: 1.5px;
+  background: #5C3A4F;
+  transition: width 280ms ease;
+}
+.nav-link:hover::after { width: 100%; }
+
+/* Card hover lift */
+.card-lift {
+  transition: transform 320ms cubic-bezier(.2,.8,.2,1), box-shadow 320ms ease, border-color 320ms ease;
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px -20px rgba(92,58,79,0.35);
+  border-color: #8E5A7B;
+}
+
+/* Section reveal */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal { animation: fadeUp 700ms cubic-bezier(.2,.8,.2,1) both; }
+
+/* Scroll behaviour */
+html { scroll-behavior: smooth; }
+
+/* Pretty scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #ffffff; }
+::-webkit-scrollbar-thumb { background: #C9B8A8; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #8E5A7B; }
+
+/* Decorative diagonal divider */
+.diagonal-divider {
+  background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
+}
+
+/* Avatar gradient */
+.avatar-grad {
+  background: linear-gradient(135deg, #5C3A4F 0%, #8E5A7B 60%, #C58FA8 100%);
+}
